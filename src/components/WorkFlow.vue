@@ -160,7 +160,6 @@ export default {
   color: #fff;
   font-size: 14px;
   padding: 6px 0;
-  z-index: 10;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
