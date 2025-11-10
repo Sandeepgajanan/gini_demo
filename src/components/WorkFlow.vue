@@ -80,14 +80,17 @@ export default {
       this.selectedItem = null;
     },
     confirmSelection() {
-      this.speak(`Welcome to ${this.selectedItem.name} workflow`);
-      this.$router.push("/next-page"); // later you can replace with your next route
+      this.speak(`You selected ${this.selectedItem.name}`);
       this.selectedItem = null;
     },
+
+
   },
   mounted() {
     this.speak("Select workflow");
+
   },
+
 };
 </script>
 <style scoped>
