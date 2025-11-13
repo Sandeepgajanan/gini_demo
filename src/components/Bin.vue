@@ -221,6 +221,9 @@ export default {
   .bin-code {
     font-size: 42px;
   }
+  .input-wrapper{
+    width: 100%;
+  }
 
   .ready-btn {
     width: 100%;

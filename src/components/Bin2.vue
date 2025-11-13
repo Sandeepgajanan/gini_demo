@@ -54,7 +54,7 @@ export default {
       if (action === "signoff") this.$router.push("/");
     },
     confirmSelection() {
-      this.$router.push("/apple"); 
+      this.$router.push("/apple");
     },
     showError(message) {
       this.errorMessage = message;
@@ -66,7 +66,7 @@ export default {
   },
   watch: {
     bin(value) {
-      const input = value.trim().replace(/\s+/g, ""); 
+      const input = value.trim().replace(/\s+/g, "");
       if (input === "46") {
         this.confirmSelection();
       } else if (input.length >= 2) {
@@ -221,7 +221,9 @@ export default {
   .bin-code {
     font-size: 42px;
   }
-
+  .input-wrapper {
+    width: 100%;
+  }
   .ready-btn {
     width: 100%;
   }

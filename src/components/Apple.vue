@@ -113,16 +113,31 @@ export default {
     handleScan() {
       const input = this.pickQuantity.trim();
 
-      if (!input) {
+      if (!input) return;
+
+      const qty = parseInt(input, 10);
+
+      if (isNaN(qty) || qty <= 0) {
         return;
       }
 
-      // ✅ Correct value check
-      if (input === "8") {
-        this.confirmSelection();
-      } else {
-        this.showError("Invalid check digit");
+      if (qty > this.details.open) {
+        this.showError("Quantity exceeds available");
+        return;
       }
+
+      // ✅ Update values
+      this.details.picked += qty;
+      this.details.open -= qty;
+
+      // ✅ Correct value check
+      if (this.details.open > 0) {
+        this.speak(`${this.details.open} ${this.selectedItem.name} remaining`);
+      } else {
+        this.confirmSelection();
+      }
+
+      this.pickQuantity = "";
     },
   },
 
