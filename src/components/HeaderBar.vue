@@ -58,6 +58,24 @@ export default {
       // Optionally emit event to parent
       this.$emit("menu-action", item.action);
     },
+    handleClickOutside(event) {
+      // close dropdown if clicked outside
+      const menu = this.$el.querySelector(".dropdown-menu");
+      const button = this.$el.querySelector(".menu-btn");
+      if (
+        menu &&
+        !menu.contains(event.target) &&
+        !button.contains(event.target)
+      ) {
+        this.menuOpen = false;
+      }
+    },
+  },
+  mounted() {
+    document.addEventListener("click", this.handleClickOutside);
+  },
+  beforeUnmount() {
+    document.removeEventListener("click", this.handleClickOutside);
   },
 };
 </script>
@@ -95,7 +113,7 @@ export default {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  margin-left: -20px;
+  margin-left: -21px;
 }
 .menu-btn {
   background: transparent;

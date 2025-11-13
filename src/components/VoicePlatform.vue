@@ -53,12 +53,11 @@ export default {
 </script>
 
 <style scoped>
-
 .screen {
   display: flex;
   flex-direction: column;
   height: 100dvh;
-  background-color:#edf0f3;
+  background-color: #edf0f3;
   color: #000;
 }
 
@@ -95,7 +94,6 @@ export default {
   height: 100%;
   object-fit: cover;
   object-position: center;
-
 }
 
 .header-right .menu-btn {
@@ -128,7 +126,8 @@ export default {
 }
 .subtitle {
   color: #ff7a00;
-  font-size: 18px;
+  font-size: 25px;
+  margin-top: 10px;
   font-weight: 600;
 }
 

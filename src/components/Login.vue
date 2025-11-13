@@ -110,6 +110,24 @@ export default {
       this.errorMessage = "";
       this.$router.push("/voice");
     },
+    handleClickOutside(event) {
+      // Close the popup menu if click happens outside the hamburger or menu
+      const menu = this.$el.querySelector(".popup-menu");
+      const icon = this.$el.querySelector(".ri-more-2-fill");
+      if (
+        menu &&
+        !menu.contains(event.target) &&
+        !icon.contains(event.target)
+      ) {
+        this.menuOpen = false;
+      }
+    },
+  },
+  mounted() {
+    document.addEventListener("click", this.handleClickOutside);
+  },
+  beforeUnmount() {
+    document.removeEventListener("click", this.handleClickOutside);
   },
 };
 </script>

@@ -80,17 +80,13 @@ export default {
       this.selectedItem = null;
     },
     confirmSelection() {
-      this.speak(`You selected ${this.selectedItem.name}`);
+      this.$router.push("/aisle");
       this.selectedItem = null;
     },
-
-
   },
   mounted() {
     this.speak("Select workflow");
-
   },
-
 };
 </script>
 <style scoped>
@@ -233,7 +229,7 @@ export default {
   color: #333;
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 768px) {
   .card-img {
     height: 160px;
   }
