@@ -83,7 +83,8 @@ export default {
 
         <footer class="footer">
             <h3 class="title"></h3>
-            <h1 class="code">{{ selectedItem.name }} 1,2 or 3</h1>
+            <!-- <h1 class="code">{{ selectedItem.name }} 1,2 or 3</h1> -->
+            <p>{{ selectedItem.name }} 1,2 or 3</p>
             <div class="input-wrapper">
                 <transition name="fade">
                 <div v-if="errorMessage" class="error-card">

@@ -66,8 +66,10 @@
         </div>
 
         <footer class="footer">
-            <h3 class="code">Tyre Pressure ?</h3>
-            <h3 class="code">Input range between 30 PSI - 50 PSI</h3>
+            <!-- <h3 class="code">Tyre Pressure ?</h3> -->
+            <!-- <h3 class="code">Input range between 30 PSI - 50 PSI</h3> -->
+            <p>Tyre Pressure ?</p>
+            <p>Input range between 30 PSI - 50 PSI</p>
             <p>Hint : Check tyre pressure</p>
             <div class="input-wrapper">
 
