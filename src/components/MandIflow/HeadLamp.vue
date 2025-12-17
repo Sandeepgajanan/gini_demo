@@ -10,7 +10,7 @@ export default {
                 name:"HeadLamps",
                 image: "/Images_M&I/headLamps.jpg",
             },
-            errorMessage : ";",
+            errorMessage : "",
             errorTimeout : null,
         };
     },
