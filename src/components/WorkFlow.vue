@@ -33,7 +33,7 @@
         <p class="popup-text">{{ selectedItem.name }} Correct?</p>
         <img src="/Images/logo.png" alt="" class="popup-logo" />
         <div class="popup-buttons">
-          <button class="btn-yes" @click="confirmSelection">YES</button>
+          <button class="btn-yes" @click="confirmSelection(selectedItem.name)">YES</button>
           <button class="btn-no" @click="closePopup">NO</button>
         </div>
       </div>
@@ -79,8 +79,13 @@ export default {
     closePopup() {
       this.selectedItem = null;
     },
-    confirmSelection() {
-      this.$router.push("/aisle");
+    confirmSelection(item) {
+      console.log(item);
+      if (item == "Digital Checklist") {
+        this.$router.push("/scanEquipment");
+      }else{
+        this.$router.push("/aisle");
+      }
       this.selectedItem = null;
     },
   },
