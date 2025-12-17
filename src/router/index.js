@@ -10,6 +10,9 @@ import Aisle21 from "@/components/Aisle21.vue";
 import Bin2 from "@/components/Bin2.vue";
 import Apple from "@/components/Apple.vue";
 import Finish from "@/components/Finish.vue";
+import aisleforcasepicking from "@/components/Case-picking/Asile.vue";
+import binforcasepicking from "@/components/Case-picking/BinforCasePicking.vue";
+import sparkPlug from "@/components/Case-picking/sparkPlug.vue";
 
 import ScanEquipment from "@/components/MandIflow/ScanEquipment.vue";
 import InspectionModel1 from "@/components/MandIflow/Inspection_1.vue";
@@ -35,18 +38,10 @@ const routes = [
   { path: "/bin2", name: "Bin2", component: Bin2 },
   { path: "/apple", name: "Apple", component: Apple },
   { path: "/finish", name: "Finish", component: Finish },
-  { path: "/scanEquipment", name: "ScanEquipment", component:ScanEquipment },
-  { path: "/inspectionModel1", name: "InspectionModel1", component:InspectionModel1},
-  { path: "/inspectionModel2", name: "InspectionModel2", component:InspectionModel2},
-  { path: "/inspectionModel3", name: "InspectionModel3", component:InspectionModel3},
-  { path: "/externalDamage1", name: "ExternalDamage1", component:ExternalDamage1},
-  { path: "/ignitionStatus", name: "IgnitionStatus", component:IgnitionStatus},
-  { path: "/headLamps", name: "HeadLamps", component:HeadLamps},
-  { path: "/indicator", name: "Indicator", component:Indicator},
-  { path: "/flatTire", name: "FlatTire", component:FlatTire},
-  { path: "/pressure", name: "Pressure", component:Pressure},
-  { path: "/checklist", name: "Checklist", component:Checklist}, 
-  { path: "/inspection1_finish", name: "Inspection1_finish", component:Inspection1_finish},
+  {path: "/aislecasepicking", name: "casepicking", component: aisleforcasepicking },
+  {path: "/binforcasepicking", name: "binforcasepicking", component: binforcasepicking },
+   {path: "/binforcasepicking", name: "binforcasepicking", component: binforcasepicking },
+   {path: "/sparkPlug", name: "sparkPlug", component: sparkPlug }
 ];
 
 const router = createRouter({
