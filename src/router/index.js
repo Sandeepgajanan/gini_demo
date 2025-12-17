@@ -10,6 +10,9 @@ import Aisle21 from "@/components/Aisle21.vue";
 import Bin2 from "@/components/Bin2.vue";
 import Apple from "@/components/Apple.vue";
 import Finish from "@/components/Finish.vue";
+import aisleforcasepicking from "@/components/Case-picking/Asile.vue";
+import binforcasepicking from "@/components/Case-picking/BinforCasePicking.vue";
+import sparkPlug from "@/components/Case-picking/sparkPlug.vue";
 
 const routes = [
   { path: "/", name: "Login", component: Login },
@@ -22,6 +25,10 @@ const routes = [
   { path: "/bin2", name: "Bin2", component: Bin2 },
   { path: "/apple", name: "Apple", component: Apple },
   { path: "/finish", name: "Finish", component: Finish },
+  {path: "/aislecasepicking", name: "casepicking", component: aisleforcasepicking },
+  {path: "/binforcasepicking", name: "binforcasepicking", component: binforcasepicking },
+   {path: "/binforcasepicking", name: "binforcasepicking", component: binforcasepicking },
+   {path: "/sparkPlug", name: "sparkPlug", component: sparkPlug }
 ];
 
 const router = createRouter({

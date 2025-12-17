@@ -3,7 +3,7 @@
     <HeaderBar @menu-action="handleMenuAction" />
     <main class="workflow-main">
       <h2 class="title">Select Workflow</h2>
-
+ 
       <div class="workflow-grid">
         <div
           v-for="(item, index) in workflows"
@@ -21,11 +21,11 @@
         </div>
       </div>
     </main>
-
+ 
     <footer class="footer">
       <p>Tap any option or say 1, 2, 3 or 4</p>
     </footer>
-
+ 
     <!-- Popup -->
     <div v-if="selectedItem" class="popup-backdrop" @click.self="closePopup">
       <div class="popup">
@@ -33,7 +33,7 @@
         <p class="popup-text">{{ selectedItem.name }} Correct?</p>
         <img src="/Images/logo.png" alt="" class="popup-logo" />
         <div class="popup-buttons">
-          <button class="btn-yes" @click="confirmSelection">YES</button>
+          <button class="btn-yes" @click="confirmSelection(selectedItem.name)">YES</button>
           <button class="btn-no" @click="closePopup">NO</button>
         </div>
       </div>
@@ -79,8 +79,17 @@ export default {
     closePopup() {
       this.selectedItem = null;
     },
-    confirmSelection() {
-      this.$router.push("/aisle");
+    confirmSelection(item) {
+      console.log(item);
+      if (item == "Digital Checklist") {
+        this.$router.push("/scanEquipment");
+      }else if(item == "Case picking")
+      {
+        this.$router.push("/aislecasepicking");
+      }
+      else{
+        this.$router.push("/aisle");
+      }
       this.selectedItem = null;
     },
   },
@@ -98,21 +107,21 @@ export default {
   background-color: #edf0f3;
   color: #000;
 }
-
+ 
 .title {
   text-align: center;
   margin: 16px 0;
   font-size: 20px;
   font-weight: 700;
 }
-
+ 
 .workflow-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 16px;
   padding: 0 16px;
 }
-
+ 
 .workflow-card {
   border-radius: 12px;
   overflow: hidden;
@@ -126,7 +135,7 @@ export default {
   transform: translateY(-3px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
-
+ 
 .card-top {
   background-color: #4000a5;
   color: white;
@@ -136,7 +145,7 @@ export default {
   font-size: 15px;
   font-weight: 500;
 }
-
+ 
 .card-imgcontainer {
   flex: 1;
   overflow: hidden;
@@ -148,7 +157,7 @@ export default {
   object-fit: cover;
   object-position: center;
 }
-
+ 
 .card-bottom {
   position: absolute;
   bottom: 0;
@@ -161,7 +170,7 @@ export default {
   padding: 6px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
-
+ 
 /* Popup */
 .popup-backdrop {
   position: fixed;
@@ -174,7 +183,7 @@ export default {
   justify-content: center;
   align-items: center;
 }
-
+ 
 .popup {
   background: #fff;
   border-radius: 12px;
@@ -184,30 +193,30 @@ export default {
   max-width: 320px;
   border: 4px solid #ff7a00;
 }
-
+ 
 .popup-title {
   font-weight: 700;
   font-size: 18px;
   margin-bottom: 8px;
 }
-
+ 
 .popup-text {
   font-size: 16px;
   margin-bottom: 12px;
 }
-
+ 
 .popup-logo {
   width: 100px;
   opacity: 0.3;
   margin: 10px auto;
 }
-
+ 
 .popup-buttons {
   display: flex;
   justify-content: space-around;
   margin-top: 16px;
 }
-
+ 
 .btn-yes,
 .btn-no {
   background-color: #ff7a00;
@@ -221,14 +230,14 @@ export default {
 .btn-no {
   background-color: #bbb;
 }
-
+ 
 .footer {
   text-align: center;
   padding: 16px;
   font-size: 14px;
   color: #333;
 }
-
+ 
 @media (max-width: 768px) {
   .card-img {
     height: 160px;
