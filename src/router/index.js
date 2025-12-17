@@ -14,6 +14,19 @@ import aisleforcasepicking from "@/components/Case-picking/Asile.vue";
 import binforcasepicking from "@/components/Case-picking/BinforCasePicking.vue";
 import sparkPlug from "@/components/Case-picking/sparkPlug.vue";
 
+import ScanEquipment from "@/components/MandIflow/ScanEquipment.vue";
+import InspectionModel1 from "@/components/MandIflow/Inspection_1.vue";
+import InspectionModel2 from "@/components/MandIflow/Inspection_2.vue";
+import InspectionModel3 from "@/components/MandIflow/Inspection_3.vue";
+import ExternalDamage1 from "@/components/MandIflow/ExternalDamage_1.vue";
+import IgnitionStatus from "@/components/MandIflow/IgnitionStatus.vue";
+import HeadLamps from "@/components/MandIflow/HeadLamp.vue";
+import Indicator from "@/components/MandIflow/Indicator.vue";
+import FlatTire from "@/components/MandIflow/FlatTire.vue";
+import Pressure from "@/components/MandIflow/Pressure.vue";
+import Checklist from "@/components/MandIflow/Checklist.vue";
+import Inspection1_finish from "@/components/MandIflow/Inspection1_Finish.vue";
+
 const routes = [
   { path: "/", name: "Login", component: Login },
   { path: "/voice", name: "VoicePlatform", component: VoicePlatform },
